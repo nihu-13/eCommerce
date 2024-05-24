@@ -20,7 +20,7 @@ html {
 body {
   overflow-x: hidden;
    scrollbar-color: rgb(98 84 243);
-    scrollbar-width: thin;
+    scrollbar-width: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -85,7 +85,7 @@ li {
 ${"" /* resuable code section  */}
 
 .container {
-  max-width: 120rem;
+  max-width: 100rem;
   margin: 0 auto;
 }
 
@@ -168,12 +168,24 @@ input, textarea{
        html {
       font-size: 50%;
     }
+  }
+  @media (max-width: ${({ theme }) => theme.media.section}) {
+    .grid {
+      gap: 3.2rem;
+    }
+    .grid-two-column,
+    .grid-three-column,
+    .grid-four-column {
+      grid-template-columns: 1fr;
+    }
+  }
+  
 
 .grid{
   gap: 3.2rem;
 }
       .grid-two-column , .grid-three-column, .grid-four-column{
-          grid-template-columns: 1fr;
+          grid-template-columns: -1fr;
         }
     }
 
